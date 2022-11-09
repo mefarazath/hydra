@@ -20,7 +20,7 @@ RUN go build -tags sqlite,json1 -o /usr/bin/hydra
 FROM alpine:3.15
 
 RUN addgroup -S ory; \
-    adduser -S ory -u 10014 -G ory -D  -h /home/ory -s /bin/nologin; \
+    adduser -S ory -u 10022 -G ory -D  -h /home/ory -s /bin/nologin; \
     chown -R ory:ory /home/ory
 
 COPY --from=builder /usr/bin/hydra /usr/bin/hydra
@@ -38,9 +38,9 @@ VOLUME /home/ory
 # Declare the standard ports used by hydra (4444 for public service endpoint, 4445 for admin service endpoint)
 EXPOSE 4444 4445
 
-USER ory
+USER 10022
 ENTRYPOINT ["hydra"]
 
-USER ory
+USER 10022
 CMD ["serve"]
 
