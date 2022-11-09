@@ -38,9 +38,9 @@ VOLUME /home/ory
 # Declare the standard ports used by hydra (4444 for public service endpoint, 4445 for admin service endpoint)
 EXPOSE 4444 4445
 
-USER 10014
+USER ory
 ENTRYPOINT ["hydra"]
 
-USER 10014
+USER ory
 CMD ["serve"]
 
