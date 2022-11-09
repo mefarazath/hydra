@@ -40,5 +40,7 @@ EXPOSE 4444 4445
 
 USER 10001
 ENTRYPOINT ["hydra"]
+
+USER 10001
 CMD ["serve"]
 
